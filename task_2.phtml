@@ -1,0 +1,30 @@
+<?php
+$words = [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "lime",
+    "magenta",
+    "black",
+    "gold",
+    "gray",
+    "tomato"
+];
+
+for ($i = 0; $i <= 5; $i++) {
+    echo "Строка [" . $i . "]: ";
+    for ($j = 0; $j <= 5; $j++) {
+        $random = array_rand($words, 5);
+        $color = array_rand($words, 5);
+        if ($words[$random[$j]] != $words[$color[$j]]) {
+            printf('<span style="color: '. $words[$color[$j]] .'">' . $words[$random[$j]] . '</span> ');
+        }
+        else
+        {
+            printf('<span style="color: '. $words[$color[$j+1]].'">' . $words[$random[$j]] . '</span> ');
+        }
+    }
+    echo "<br>";
+}
+
